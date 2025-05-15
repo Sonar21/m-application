@@ -55,7 +55,7 @@ export default async function Home() {
   // const sliceData : News = [];
   const data = await getNewsList({
     limit: TOP_NEWS_LIMIT,
-  })
+  });
   return (
     <>
       <section className={styles.top}>
