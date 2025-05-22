@@ -9,10 +9,15 @@ type Props ={
     params: {
         slug:string;
     };
+    searchParams:{
+        dk? :string;
+    }
 };
-export default async function Page({params}:Props) {
+export default async function Page({params,searchParams}:Props) {
 
-    const data =await getNewsDetail(params.slug).catch(notFound);
+    const data =await getNewsDetail(params.slug,{
+        draftKey :searchParams.dk,
+    }).catch(notFound);
     // return <div>{data.title}</div>
     return (
         <>
